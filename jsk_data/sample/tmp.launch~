@@ -1,0 +1,18 @@
+<launch>
+
+  <node name="data_collection_server_filters"
+        pkg="jsk_data" type="data_collection_server.py">
+    <rosparam>
+      message_filters: true
+      approximate_sync: true
+      method: request
+      save_dir: ~/.ros/jsk_data/sample/
+      topics:
+        - name: /kinect_head/rgb/image_raw
+          fname: image0.png
+          savetype: ColorImage
+          msg_class: sensor_msgs/Image
+    </rosparam>
+  </node>
+
+</launch>
